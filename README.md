@@ -2,6 +2,8 @@
 
 **A focused, clickable prototype for the subcontracting exception in the Full Stack Developer assignment.** It helps a production manager see what was sent to a heat-treatment vendor, what the vendor reported, what physically returned, what passed inspection, and what remains at risk for customer delivery.
 
+**Live demo:** [Open ForgeFlow ERP](https://forgeflow-erp-theta.vercel.app/dashboard)
+
 ## The assignment scenario
 
 | Checkpoint | Quantity | What it means |
