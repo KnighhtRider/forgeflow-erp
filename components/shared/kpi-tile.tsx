@@ -8,12 +8,14 @@ export function KpiTile({
   icon: IconComponent,
   definition,
   warn,
+  compact = false,
 }: {
   label: string;
   value: string | number;
   icon?: LucideIcon;
   definition: string;
   warn?: boolean;
+  compact?: boolean;
 }) {
   return (
     <Tooltip>
@@ -21,19 +23,19 @@ export function KpiTile({
         <div
           tabIndex={0}
           aria-label={`${label}: ${value}`}
-          className="cursor-help bg-card/80 backdrop-blur-sm px-4 py-4 outline-none transition-colors hover:bg-card/90 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring/50 rounded-xl border shadow-sm"
+          className={`cursor-help bg-card/80 backdrop-blur-sm outline-none transition-colors hover:bg-card/90 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring/50 rounded-xl border shadow-sm ${compact ? "px-3 py-3 sm:px-4 sm:py-4" : "px-4 py-4"}`}
         >
           <div className="flex items-center gap-2 text-muted-foreground">
             {IconComponent ? (
               <IconComponent
-                className={`size-3.5 ${warn ? "text-amber-600" : ""}`}
+                className={`${compact ? "size-3 sm:size-3.5" : "size-3.5"} ${warn ? "text-amber-600" : ""}`}
                 aria-hidden="true"
               />
             ) : null}
-            <span className="text-xs">{label}</span>
+            <span className={compact ? "min-h-8 text-xs leading-4" : "text-xs"}>{label}</span>
           </div>
           <div
-            className={`mt-2 font-heading text-2xl font-semibold leading-none tabular-nums ${
+            className={`mt-2 font-heading ${compact ? "text-xl sm:text-2xl" : "text-2xl"} font-semibold leading-none tabular-nums ${
               warn ? "text-amber-600" : ""
             }`}
           >
