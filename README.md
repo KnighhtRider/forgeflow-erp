@@ -45,6 +45,8 @@ Open the local URL shown in the terminal. No credentials, environment variables,
 
 ## Suggested three-minute walkthrough
 
+**Walkthrough recording:** [Watch the ForgeFlow ERP demo](https://drive.google.com/file/d/1bNisS7o0y7lE5OEZlYxQe5LIh-slRZJ5/view?usp=drive_link)
+
 | Time | Show |
 |---|---|
 | 0:00–0:30 | Dashboard: 1,000 units due, 740 accepted and available, zero shipped, and the delivery shortfall. |
@@ -54,7 +56,7 @@ Open the local URL shown in the terminal. No credentials, environment variables,
 | 2:10–2:35 | Imports: duplicate detection, simulated outage, and retry of a failed vendor update. |
 | 2:35–3:00 | Integration plan: explain why the customer's ERP stays authoritative and why idempotency, exception review, and fallback are built into the rollout plan. |
 
-The History screen also shows the local audit trail and backup controls. Record a walkthrough before submission; none is included in this repository.
+The History screen also shows the local audit trail and backup controls.
 
 The import outage is simulated in the browser. It does not contact a vendor or external service.
 
@@ -114,10 +116,10 @@ pnpm build
 - The 40 rejected units are held for possible rework. A full rework, reinspection, scrap authorization, and vendor debit / credit lifecycle is not implemented.
 - “No other finished stock” is treated as zero opening stock for this customer order.
 - Data is stored in each browser's local storage. There is no server database, login, shared workspace, role authorization, real vendor/ERP integration, or durable backup service. This is a review demo, not a production system of record.
-- A manual walkthrough is outlined above; no recording is included.
+- A short walkthrough recording is linked above.
 
 ## Assignment submission notes
 
 - **AI tool used:** OpenAI Codex. One correction made during review was to preserve vendor-reported, warehouse-received, and quality-accepted quantities independently instead of combining them into a single completed quantity.
 - **Time spent (approximate):** Task 1 — about 3 hours; Task 2 — about 2 hours; approximately 5 hours total.
-- **Unfinished:** Production persistence and authentication, live connectors, monetary invoice matching, the complete rejected-part disposition loop, and a walkthrough recording are outside this prototype.
+- **Unfinished:** Production persistence and authentication, live connectors, monetary invoice matching, and the complete rejected-part disposition loop are outside this prototype.
